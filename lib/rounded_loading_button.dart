@@ -194,12 +194,13 @@ class RoundedLoadingButtonState extends State<RoundedLoadingButton>
       padding: const EdgeInsets.all(0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          onSurface: widget.disabledColor,
           minimumSize: Size(_squeezeAnimation.value, widget.height),
+          backgroundColor: widget.color,
+          disabledForegroundColor: widget.disabledColor!.withOpacity(0.38),
+          disabledBackgroundColor: widget.disabledColor!.withOpacity(0.12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(widget.borderRadius),
           ),
-          primary: widget.color,
           elevation: widget.elevation,
           padding: const EdgeInsets.all(0),
         ),
